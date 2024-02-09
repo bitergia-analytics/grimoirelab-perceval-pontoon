@@ -1,0 +1,253 @@
+{
+  "entities":[
+    {
+      "pk":279124,
+      "original":"The package contains multiple entries with the same name. This practice has been banned. Try unzipping and re-zipping your add-on package and try again.",
+      "original_plural":"",
+      "machinery_original":"The package contains multiple entries with the same name. This practice has been banned. Try unzipping and re-zipping your add-on package and try again.",
+      "key":"",
+      "context":"",
+      "path":"LC_MESSAGES/messages.po",
+      "project":{
+        "pk":88,
+        "name":"AMO Linter",
+        "slug":"amo-linter",
+        "info":"The add-ons linter is a tool that warns of potential problems within an extension’s code. Developers can use the web-ext command line tool to run the linter locally to check for potential issues during development, and addons.mozilla.org (AMO) uses it to validate an extension during the submission process.\n\nTo request a new locale, please file a bug in Bugzilla <a href=\"https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla+Localizations&amp;assigned_to=pmo%40mozilla.com\">using this template</a>.",
+        "langpack_url":"",
+        "contact":{
+          "avatar":"avatar1",
+          "name":"Name 1",
+          "url":"/contributors/contributor1/"
+        }
+      },
+      "format":"po",
+      "comment":"",
+      "group_comment":"",
+      "resource_comment":"",
+      "order":72,
+      "source":[
+        [
+          "src/messages/layout.js",
+          "7"
+        ]
+      ],
+      "obsolete":false,
+      "translation":[
+        {
+          "pk":9950437,
+          "string":"El paquete contiene varias entradas con el mismo nombre. Esta accion ha sido baneada. Intente descromprimir y volver a comprimir su paquete complementario e intentelo de nuevo.",
+          "approved":false,
+          "rejected":false,
+          "pretranslated":false,
+          "fuzzy":false,
+          "errors":[ ],
+          "warnings":[ ]
+        }
+      ],
+      "readonly":false,
+      "is_sibling":false,
+      "date_created":"2023-04-27T11:27:53.750Z"
+    },
+    {
+      "pk":279138,
+      "original":"Add-ons which are already signed will be re-signed when published on AMO. This will replace any existing signatures on the add-on.",
+      "original_plural":"",
+      "machinery_original":"Add-ons which are already signed will be re-signed when published on AMO. This will replace any existing signatures on the add-on.",
+      "key":"",
+      "context":"",
+      "path":"LC_MESSAGES/messages.po",
+      "project":{
+        "pk":88,
+        "name":"AMO Linter",
+        "slug":"amo-linter",
+        "info":"The add-ons linter is a tool that warns of potential problems within an extension’s code. Developers can use the web-ext command line tool to run the linter locally to check for potential issues during development, and addons.mozilla.org (AMO) uses it to validate an extension during the submission process.\n\nTo request a new locale, please file a bug in Bugzilla <a href=\"https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla+Localizations&amp;assigned_to=pmo%40mozilla.com\">using this template</a>.",
+        "langpack_url":"",
+        "contact":{
+          "avatar":"avatar1",
+          "name":"Name 1",
+          "url":"/contributors/contributor1/"
+        }
+      },
+      "format":"po",
+      "comment":"",
+      "group_comment":"",
+      "resource_comment":"",
+      "order":77,
+      "source":[
+        [
+          "src/messages/layout.js",
+          "91"
+        ]
+      ],
+      "obsolete":false,
+      "translation":[
+        {
+          "pk":9950438,
+          "string":"Complementos que ya han sido firmados seran firmadosn de vuelta al ser publicados en AMO. Esto remplazara cualquier firma ya existente en el complemento.",
+          "approved":false,
+          "rejected":false,
+          "pretranslated":false,
+          "fuzzy":false,
+          "errors":[ ],
+          "warnings":[ ]
+        }
+      ],
+      "readonly":false,
+      "is_sibling":false,
+      "date_created":"2023-04-27T11:27:53.750Z"
+    },
+    {
+      "pk":279144,
+      "original":"We do not allow coinminer scripts to be run inside WebExtensions. See https://github.com/mozilla/addons-linter/issues/1643 for more details.",
+      "original_plural":"",
+      "machinery_original":"We do not allow coinminer scripts to be run inside WebExtensions. See https://github.com/mozilla/addons-linter/issues/1643 for more details.",
+      "key":"",
+      "context":"",
+      "path":"LC_MESSAGES/messages.po",
+      "project":{
+        "pk":88,
+        "name":"AMO Linter",
+        "slug":"amo-linter",
+        "info":"The add-ons linter is a tool that warns of potential problems within an extension’s code. Developers can use the web-ext command line tool to run the linter locally to check for potential issues during development, and addons.mozilla.org (AMO) uses it to validate an extension during the submission process.\n\nTo request a new locale, please file a bug in Bugzilla <a href=\"https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla+Localizations&amp;assigned_to=pmo%40mozilla.com\">using this template</a>.",
+        "langpack_url":"",
+        "contact":{
+          "avatar":"avatar1",
+          "name":"Name 1",
+          "url":"/contributors/contributor1/"
+        }
+      },
+      "format":"po",
+      "comment":"",
+      "group_comment":"",
+      "resource_comment":"",
+      "order":79,
+      "source":[
+        [
+          "src/messages/layout.js",
+          "99"
+        ]
+      ],
+      "obsolete":false,
+      "translation":[
+        {
+          "pk":9950439,
+          "string":"No permitimos que se ejecuten minas de criptomonedas dentro de WebExtensions. Mire: https://github.com/mozilla/addons-linter/issues/1643 para mas detalles.",
+          "approved":false,
+          "rejected":false,
+          "pretranslated":false,
+          "fuzzy":false,
+          "errors":[ ],
+          "warnings":[ ]
+        }
+      ],
+      "readonly":false,
+      "is_sibling":false,
+      "date_created":"2023-04-27T11:27:53.750Z"
+    },
+    {
+      "pk":279140,
+      "original":"String names starting with @@ get translated to built-in constants (https://mzl.la/2BL9ZjE).",
+      "original_plural":"",
+      "machinery_original":"String names starting with @@ get translated to built-in constants (https://mzl.la/2BL9ZjE).",
+      "key":"",
+      "context":"",
+      "path":"LC_MESSAGES/messages.po",
+      "project":{
+        "pk":88,
+        "name":"AMO Linter",
+        "slug":"amo-linter",
+        "info":"The add-ons linter is a tool that warns of potential problems within an extension’s code. Developers can use the web-ext command line tool to run the linter locally to check for potential issues during development, and addons.mozilla.org (AMO) uses it to validate an extension during the submission process.\n\nTo request a new locale, please file a bug in Bugzilla <a href=\"https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla+Localizations&amp;assigned_to=pmo%40mozilla.com\">using this template</a>.",
+        "langpack_url":"",
+        "contact":{
+          "avatar":"avatar1",
+          "name":"Name 1",
+          "url":"/contributors/contributor1/"
+        }
+      },
+      "format":"po",
+      "comment":"",
+      "group_comment":"",
+      "resource_comment":"",
+      "order":81,
+      "source":[
+        [
+          "src/messages/locale-messagesjson.js",
+          "14"
+        ]
+      ],
+      "obsolete":false,
+      "translation":[
+        {
+          "pk":9950440,
+          "string":"Nombres de cadenas que comienzan en @@ son traducidos a constantes integradas (https://mzl.la/2BL9ZjE).",
+          "approved":false,
+          "rejected":false,
+          "pretranslated":false,
+          "fuzzy":false,
+          "errors":[ ],
+          "warnings":[ ]
+        }
+      ],
+      "readonly":false,
+      "is_sibling":false,
+      "date_created":"2023-04-27T11:27:53.750Z"
+    },
+    {
+      "pk":279123,
+      "original":"String name should only contain alpha-numeric characters, _ and @ (https://mzl.la/2Eztyi5).",
+      "original_plural":"",
+      "machinery_original":"String name should only contain alpha-numeric characters, _ and @ (https://mzl.la/2Eztyi5).",
+      "key":"",
+      "context":"",
+      "path":"LC_MESSAGES/messages.po",
+      "project":{
+        "pk":88,
+        "name":"AMO Linter",
+        "slug":"amo-linter",
+        "info":"The add-ons linter is a tool that warns of potential problems within an extension’s code. Developers can use the web-ext command line tool to run the linter locally to check for potential issues during development, and addons.mozilla.org (AMO) uses it to validate an extension during the submission process.\n\nTo request a new locale, please file a bug in Bugzilla <a href=\"https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla+Localizations&amp;assigned_to=pmo%40mozilla.com\">using this template</a>.",
+        "langpack_url":"",
+        "contact":{
+          "avatar":"avatar1",
+          "name":"Name 1",
+          "url":"/contributors/contributor1/"
+        }
+      },
+      "format":"po",
+      "comment":"",
+      "group_comment":"",
+      "resource_comment":"",
+      "order":82,
+      "source":[
+        [
+          "src/messages/locale-messagesjson.js",
+          "21"
+        ]
+      ],
+      "obsolete":false,
+      "translation":[
+        {
+          "pk":9950441,
+          "string":"El nombre de la cadena solo debe contenerr caracteres alfanuméricos, _ y @ (https://mzl.la/2Eztyi5).",
+          "approved":false,
+          "rejected":false,
+          "pretranslated":false,
+          "fuzzy":false,
+          "errors":[ ],
+          "warnings":[ ]
+        }
+      ],
+      "readonly":false,
+      "is_sibling":false,
+      "date_created":"2023-04-27T11:27:53.750Z"
+    }
+  ],
+  "has_next":false,
+  "stats":{
+    "total":18460,
+    "approved":16544,
+    "pretranslated":242,
+    "errors":1,
+    "warnings":0,
+    "unreviewed":1391
+  }
+}

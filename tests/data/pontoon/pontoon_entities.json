@@ -1,0 +1,257 @@
+{
+  "entities":[
+    {
+      "pk":280952,
+      "original":"Your extension has to be compatible with at least one application.",
+      "original_plural":"",
+      "machinery_original":"Your extension has to be compatible with at least one application.",
+      "key":"",
+      "context":"",
+      "path":"LC_MESSAGES/djangojs.po",
+      "project":{
+        "pk":48,
+        "name":"AMO",
+        "slug":"amo",
+        "info":"Addons.mozilla.org (AMO) is one of Mozilla’s biggest web properties, with 12 million users per month. This is the backend component of AMO. Updates are deployed every Thursday. Localizable strings can be extracted on Tuesday, and changes landed by 5pm UTC each Tuesday go live on Thursday. To test your localization, use a staging server. To report new issues, click <a href=\"https://github.com/mozilla/addons-server/issues/new\"> here</a>. Other ways to <a href=\"https://wiki.mozilla.org/Add-ons/Contribute\">contribute</a> to add-on.<br> <br>\n\nTo learn more about localizing and testing AMO, check out <a href=\"https://github.com/mozilla-l10n/localizer-documentation/blob/master/src/webprojects/amo.md#addonsmozillaorg-amo-how-to-localize-and-test.\">this documentation.</a><br><br>\n\nTo request a new locale, please file a bug in Bugzilla <a href=\"https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla+Localizations&amp;assigned_to=pmo%40mozilla.com\">using this template</a>.",
+        "langpack_url":"",
+        "contact":{
+          "avatar":"avatar1",
+          "name":"Name 1",
+          "url":"/contributors/contributor1/"
+        }
+      },
+      "format":"po",
+      "comment":"",
+      "group_comment":"",
+      "resource_comment":"",
+      "order":15,
+      "source":[
+        [
+          "static/js/common/upload-addon.js",
+          "400"
+        ]
+      ],
+      "obsolete":false,
+      "translation":[
+        {
+          "pk":9925882,
+          "string":"Tu extensión tiene que ser compatible por lo menos con una aplicación.",
+          "approved":false,
+          "rejected":false,
+          "pretranslated":false,
+          "fuzzy":false,
+          "errors":[ ],
+          "warnings":[ ]
+        }
+      ],
+      "readonly":false,
+      "is_sibling":false,
+      "date_created":"2023-06-06T19:31:25.092Z"
+    },
+    {
+      "pk":292898,
+      "original":"Warning: the following manifest properties that your most recent version upload used in its manifest are unsupported in this wizard and will be ignored:",
+      "original_plural":"",
+      "machinery_original":"Warning: the following manifest properties that your most recent version upload used in its manifest are unsupported in this wizard and will be ignored:",
+      "key":"",
+      "context":"",
+      "path":"LC_MESSAGES/django.po",
+      "project":{
+        "pk":48,
+        "name":"AMO",
+        "slug":"amo",
+        "info":"Addons.mozilla.org (AMO) is one of Mozilla’s biggest web properties, with 12 million users per month. This is the backend component of AMO. Updates are deployed every Thursday. Localizable strings can be extracted on Tuesday, and changes landed by 5pm UTC each Tuesday go live on Thursday. To test your localization, use a staging server. To report new issues, click <a href=\"https://github.com/mozilla/addons-server/issues/new\"> here</a>. Other ways to <a href=\"https://wiki.mozilla.org/Add-ons/Contribute\">contribute</a> to add-on.<br> <br>\n\nTo learn more about localizing and testing AMO, check out <a href=\"https://github.com/mozilla-l10n/localizer-documentation/blob/master/src/webprojects/amo.md#addonsmozillaorg-amo-how-to-localize-and-test.\">this documentation.</a><br><br>\n\nTo request a new locale, please file a bug in Bugzilla <a href=\"https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla+Localizations&amp;assigned_to=pmo%40mozilla.com\">using this template</a>.",
+        "langpack_url":"",
+        "contact":{
+          "avatar":"avatar1",
+          "name":"Name 1",
+          "url":"/contributors/contributor1/"
+        }
+      },
+      "format":"po",
+      "comment":"",
+      "group_comment":"",
+      "resource_comment":"",
+      "order":803,
+      "source":[
+        [
+          "src/olympia/devhub/templates/devhub/addons/submit/wizard.html",
+          "14"
+        ]
+      ],
+      "obsolete":false,
+      "translation":[
+        {
+          "pk":9947297,
+          "string":"Advertencia: no se admiten las siguientes propiedades del manifesto de la versión más reciente que has subido y se ignorarán:",
+          "approved":true,
+          "rejected":false,
+          "pretranslated":false,
+          "fuzzy":false,
+          "errors":[ ],
+          "warnings":[ ]
+        }
+      ],
+      "readonly":false,
+      "is_sibling":false,
+      "date_created":"2024-01-15T13:21:09.630Z"
+    },
+    {
+      "pk":279094,
+      "original":"Duplicate key found in JSON file.",
+      "original_plural":"",
+      "machinery_original":"Duplicate key found in JSON file.",
+      "key":"",
+      "context":"",
+      "path":"LC_MESSAGES/messages.po",
+      "project":{
+        "pk":88,
+        "name":"AMO Linter",
+        "slug":"amo-linter",
+        "info":"The add-ons linter is a tool that warns of potential problems within an extension’s code. Developers can use the web-ext command line tool to run the linter locally to check for potential issues during development, and addons.mozilla.org (AMO) uses it to validate an extension during the submission process.\n\nTo request a new locale, please file a bug in Bugzilla <a href=\"https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla+Localizations&amp;assigned_to=pmo%40mozilla.com\">using this template</a>.",
+        "langpack_url":"",
+        "contact":{
+          "avatar":"avatar1",
+          "name":"Name 1",
+          "url":"/contributors/contributor1/"
+        }
+      },
+      "format":"po",
+      "comment":"",
+      "group_comment":"",
+      "resource_comment":"",
+      "order":56,
+      "source":[
+        [
+          "src/messages/json.js",
+          "20"
+        ]
+      ],
+      "obsolete":false,
+      "translation":[
+        {
+          "pk":9950428,
+          "string":"Clave duplicada encontrada en archivo JSON.",
+          "approved":false,
+          "rejected":false,
+          "pretranslated":false,
+          "fuzzy":false,
+          "errors":[ ],
+          "warnings":[ ]
+        }
+      ],
+      "readonly":false,
+      "is_sibling":false,
+      "date_created":"2023-04-27T11:27:53.750Z"
+    },
+    {
+      "pk":279120,
+      "original":"No manifest.json was found at the root of the extension. The package file must be a ZIP of the extension's files themselves, not of the containing directory. See: https://mzl.la/2r2McKv for more on packaging.",
+      "original_plural":"",
+      "machinery_original":"No manifest.json was found at the root of the extension. The package file must be a ZIP of the extension's files themselves, not of the containing directory. See: https://mzl.la/2r2McKv for more on packaging.",
+      "key":"",
+      "context":"",
+      "path":"LC_MESSAGES/messages.po",
+      "project":{
+        "pk":88,
+        "name":"AMO Linter",
+        "slug":"amo-linter",
+        "info":"The add-ons linter is a tool that warns of potential problems within an extension’s code. Developers can use the web-ext command line tool to run the linter locally to check for potential issues during development, and addons.mozilla.org (AMO) uses it to validate an extension during the submission process.\n\nTo request a new locale, please file a bug in Bugzilla <a href=\"https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla+Localizations&amp;assigned_to=pmo%40mozilla.com\">using this template</a>.",
+        "langpack_url":"",
+        "contact":{
+          "avatar":"avatar1",
+          "name":"Name 1",
+          "url":"/contributors/contributor1/"
+        }
+      },
+      "format":"po",
+      "comment":"",
+      "group_comment":"",
+      "resource_comment":"",
+      "order":64,
+      "source":[
+        [
+          "src/messages/layout.js",
+          "38"
+        ]
+      ],
+      "obsolete":false,
+      "translation":[
+        {
+          "pk":9950435,
+          "string":"No se encontro ningun manifest.json en la raiz de la extension. El archivo del paquete debe ser un ZIP de la extensions de el propio archivo, no del directorio contenido. Mire: https://mzl.la/2r2McKv para mas sobre el embalaje.",
+          "approved":false,
+          "rejected":false,
+          "pretranslated":false,
+          "fuzzy":false,
+          "errors":[ ],
+          "warnings":[ ]
+        }
+      ],
+      "readonly":false,
+      "is_sibling":false,
+      "date_created":"2023-04-27T11:27:53.750Z"
+    },
+    {
+      "pk":279115,
+      "original":"Files were found that are either unnecessary or have been included unintentionally. They should be removed.",
+      "original_plural":"",
+      "machinery_original":"Files were found that are either unnecessary or have been included unintentionally. They should be removed.",
+      "key":"",
+      "context":"",
+      "path":"LC_MESSAGES/messages.po",
+      "project":{
+        "pk":88,
+        "name":"AMO Linter",
+        "slug":"amo-linter",
+        "info":"The add-ons linter is a tool that warns of potential problems within an extension’s code. Developers can use the web-ext command line tool to run the linter locally to check for potential issues during development, and addons.mozilla.org (AMO) uses it to validate an extension during the submission process.\n\nTo request a new locale, please file a bug in Bugzilla <a href=\"https://bugzilla.mozilla.org/enter_bug.cgi?product=Mozilla+Localizations&amp;assigned_to=pmo%40mozilla.com\">using this template</a>.",
+        "langpack_url":"",
+        "contact":{
+          "avatar":"avatar1",
+          "name":"Name 1",
+          "url":"/contributors/contributor1/"
+        }
+      },
+      "format":"po",
+      "comment":"",
+      "group_comment":"",
+      "resource_comment":"",
+      "order":71,
+      "source":[
+        [
+          "src/messages/layout.js",
+          "67"
+        ],
+        [
+          "src/messages/layout.js",
+          "74"
+        ]
+      ],
+      "obsolete":false,
+      "translation":[
+        {
+          "pk":9950436,
+          "string":"Archivos inecesarios o incluidos sin intencion han sido encontrados. Deben ser removidos.",
+          "approved":false,
+          "rejected":false,
+          "pretranslated":false,
+          "fuzzy":false,
+          "errors":[ ],
+          "warnings":[ ]
+        }
+      ],
+      "readonly":false,
+      "is_sibling":false,
+      "date_created":"2023-04-27T11:27:53.750Z"
+    }
+  ],
+  "has_next":false,
+  "stats":{
+    "total":18460,
+    "approved":16544,
+    "pretranslated":242,
+    "errors":1,
+    "warnings":0,
+    "unreviewed":1391
+  }
+}

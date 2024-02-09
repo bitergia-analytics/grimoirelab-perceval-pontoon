@@ -1,0 +1,7 @@
+*.pyc
+*.pyo
+build
+dist
+perceval.egg-info
+__pycache__
+.coverage
