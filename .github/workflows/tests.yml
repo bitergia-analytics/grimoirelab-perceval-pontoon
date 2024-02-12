@@ -1,0 +1,51 @@
+name: tests
+
+on:
+  push:
+    branches:
+      - '**'
+    tags:
+      - '!**'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+
+  tests:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8, 3.9]
+
+    name: Python ${{ matrix.python-version }}
+    steps:
+      - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # 3.1.0
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@13ae5bb136fac2878aff31522b9efb785519f984 # v4.3.0
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install and set up Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "PATH=$HOME/.poetry/bin:$PATH" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: |
+          poetry install -vvv
+          poetry add -D coveralls
+          poetry run pip install -r requirements_dev.txt
+
+      - name: Lint with flake8
+        run: |
+          poetry run flake8
+
+      - name: Tests and Coverage
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd tests
+          poetry run coverage run --source=perceval.backends.pontoon run_tests.py
+          poetry run coveralls --service=github

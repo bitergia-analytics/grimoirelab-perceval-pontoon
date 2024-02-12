@@ -1,0 +1,11 @@
+---
+title: Pontoon perceval backend
+category: added
+author: Jose Javier Merchante <jjmerchante@bitergia.com>
+issue: null
+notes: |
+  New backend to collect translations from a Pontoon instance.
+  It can be executed using the following command:
+
+  `perceval pontoon <pontoon_url> <locale>`
+
