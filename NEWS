@@ -1,0 +1,11 @@
+# Releases
+
+## grimoirelab-perceval-pontoon 0.1.0-rc1 - (2024-02-12)
+
+**New features:**
+
+ * Pontoon perceval backend\
+   New backend to collect translations from a Pontoon instance. It can be
+   executed using the following command:  `perceval pontoon <pontoon_url>
+   <locale>`
+
