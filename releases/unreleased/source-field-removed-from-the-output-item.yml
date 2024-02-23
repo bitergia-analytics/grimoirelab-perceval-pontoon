@@ -1,0 +1,11 @@
+---
+title: Source field removed from the output item
+category: removed
+author: Jose Javier Merchante <jjmerchante@bitergia.com>
+issue: null
+notes: >
+  Remove the `source` field from the entity item. It could
+  contain an empty list, a list of lists or a dictionary,
+  which causes errors in ElasticSearch when trying to insert
+  this item in the raw.
+

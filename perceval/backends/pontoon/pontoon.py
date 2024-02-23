@@ -260,6 +260,7 @@ class PontoonClient(HttpClient):
                 eprocessed.append(entity['pk'])
                 entity['history_data'] = self.history(entity['pk'], locale)
                 entity['locale'] = locale
+                entity.pop('source', None)
                 yield entity
 
             if not data['has_next'] or not data['entities']:
