@@ -1,0 +1,8 @@
+---
+title: Pontoon pagination updated
+category: fixed
+author: Jose Javier Merchante <jjmerchante@bitergia.com>
+issue: null
+notes: >
+  Pontoon improved the pagination for performance. Integrate the
+  recent pagination enhancements in Perceval backend.

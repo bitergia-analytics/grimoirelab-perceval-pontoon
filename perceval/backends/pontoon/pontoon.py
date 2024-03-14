@@ -243,12 +243,12 @@ class PontoonClient(HttpClient):
             cause = "Locale option is required to fetch entities."
             raise BackendError(cause=cause)
 
-        eprocessed = []
         body = {
             'locale': locale,
             'project': project,
             'limit': self.max_items,
-            'time': date_range
+            'time': date_range,
+            'page': 1
         }
 
         while True:
@@ -257,7 +257,6 @@ class PontoonClient(HttpClient):
             data = r.json()
 
             for entity in data['entities']:
-                eprocessed.append(entity['pk'])
                 entity['history_data'] = self.history(entity['pk'], locale)
                 entity['locale'] = locale
                 yield entity
@@ -265,8 +264,7 @@ class PontoonClient(HttpClient):
             if not data['has_next'] or not data['entities']:
                 break
 
-            exclude_ids = ','.join(str(i) for i in eprocessed)
-            body['exclude_entities'] = exclude_ids
+            body['page'] += 1
 
     def history(self, entity, locale):
         """Get history for an entity and locale"""
