@@ -267,6 +267,7 @@ class TestPontoonClient(unittest.TestCase):
         req_body = {
             'limit': ['5'],
             'locale': ['es'],
+            'page': ['1'],
             'project': ['all-projects'],
             'time': ['202401010000-210001010000']
         }
@@ -339,14 +340,15 @@ class TestPontoonClient(unittest.TestCase):
         req_body_0 = {
             'limit': ['5'],
             'locale': ['es'],
+            'page': ['1'],
             'project': ['all-projects'],
             'time': ['197001010000-210001010000']
         }
 
         req_body_1 = {
-            'exclude_entities': ['280952,292898,279094,279120,279115'],
             'limit': ['5'],
             'locale': ['es'],
+            'page': ['2'],
             'project': ['all-projects'],
             'time': ['197001010000-210001010000']
         }
