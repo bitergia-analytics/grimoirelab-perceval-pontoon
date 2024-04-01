@@ -1,5 +1,14 @@
 # Releases
 
+## perceval-pontoon 0.1.3 - (2024-04-01)
+
+**Bug fixes:**
+
+ * Pontoon pagination updated\
+   Pontoon improved the pagination for performance. Integrate the recent
+   pagination enhancements in Perceval backend.
+
+
   ## perceval-pontoon 0.1.2 - (2024-03-12)
   
   * Update Poetry's package dependencies
