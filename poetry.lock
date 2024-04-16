@@ -417,13 +417,13 @@ pyflakes = ">=2.4.0,<2.5.0"
 
 [[package]]
 name = "grimoirelab-toolkit"
-version = "0.4.5"
+version = "1.0.0"
 description = "Toolkit of common functions used across GrimoireLab"
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "grimoirelab_toolkit-0.4.5-py3-none-any.whl", hash = "sha256:55d1e7a4e571ba493abb06be16534ccced18ca81f781751094c516fa909ce125"},
-    {file = "grimoirelab_toolkit-0.4.5.tar.gz", hash = "sha256:db8fd8070525488b01fd52587e9c9ec1bbd41cf63ccdf0a76cbe1eb54f5968d4"},
+    {file = "grimoirelab_toolkit-1.0.0-py3-none-any.whl", hash = "sha256:8ee8502a4fd8e3144740653b3ab4deef7596c3275e50b69552b25edbc2e158e5"},
+    {file = "grimoirelab_toolkit-1.0.0.tar.gz", hash = "sha256:331e67642ade3150cc9432fccd1197ab84350318d596739af92c49f5e371a0d1"},
 ]
 
 [package.dependencies]
@@ -441,13 +441,13 @@ files = [
 
 [[package]]
 name = "idna"
-version = "3.6"
+version = "3.7"
 description = "Internationalized Domain Names in Applications (IDNA)"
 optional = false
 python-versions = ">=3.5"
 files = [
-    {file = "idna-3.6-py3-none-any.whl", hash = "sha256:c05567e9c24a6b9faaa835c4821bad0590fbb9d5779e7caa6e1cc4978e7eb24f"},
-    {file = "idna-3.6.tar.gz", hash = "sha256:9ecdbbd083b06798ae1e86adcbfe8ab1479cf864e4ee30fe4e46a003d12491ca"},
+    {file = "idna-3.7-py3-none-any.whl", hash = "sha256:82fee1fc78add43492d3a1898bfa6d8a904cc97d8427f683ed8e798d07761aa0"},
+    {file = "idna-3.7.tar.gz", hash = "sha256:028ff3aadf0609c1fd278d8ea3089299412a7a8b9bd005dd08b9f8285bcb5cfc"},
 ]
 
 [[package]]
@@ -463,13 +463,13 @@ files = [
 
 [[package]]
 name = "perceval"
-version = "0.25.0"
+version = "1.0.0"
 description = "Send Sir Perceval on a quest to fetch and gather data from software repositories."
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval-0.25.0-py3-none-any.whl", hash = "sha256:c4efb630106027c883adf740a8320de55d5ade17a4b2c6655388939f263a5650"},
-    {file = "perceval-0.25.0.tar.gz", hash = "sha256:7f97589fcad3e6d248d44ebba53454fc59f7b85b2b1c3fd691abf11e2c09003b"},
+    {file = "perceval-1.0.0-py3-none-any.whl", hash = "sha256:261b704bed34196b324c2fb1fdb7518b469997e3e04f5aa90ed13c200bedb50f"},
+    {file = "perceval-1.0.0.tar.gz", hash = "sha256:1ace89a3d1687a5c4da2e31be493e3e9e4f7473be2b98a012125747c77323a47"},
 ]
 
 [package.dependencies]
