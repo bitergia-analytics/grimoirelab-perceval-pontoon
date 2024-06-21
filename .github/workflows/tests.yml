@@ -35,7 +35,6 @@ jobs:
       - name: Install dependencies
         run: |
           poetry install -vvv
-          poetry add -D coveralls
           poetry run pip install -r requirements_dev.txt
 
       - name: Lint with flake8
@@ -48,4 +47,10 @@ jobs:
         run: |
           cd tests
           poetry run coverage run --source=perceval.backends.pontoon run_tests.py
-          poetry run coveralls --service=github
+
+      - name: Coveralls
+        uses: coverallsapp/github-action@643bc377ffa44ace6394b2b5d0d3950076de9f63 # v2.3.0
+        with:
+          coverage-reporter-version: "v0.6.9"
+          flag-name: run ${{ join(matrix.*, ' - ') }}
+          parallel: true
