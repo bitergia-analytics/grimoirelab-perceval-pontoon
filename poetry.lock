@@ -487,13 +487,13 @@ files = [
 
 [[package]]
 name = "perceval"
-version = "1.0.4"
+version = "1.0.5"
 description = "Send Sir Perceval on a quest to fetch and gather data from software repositories."
 optional = false
 python-versions = "<4.0,>=3.8"
 files = [
-    {file = "perceval-1.0.4-py3-none-any.whl", hash = "sha256:c904f3bdabb1a102ab79427956d3392712e289bd873133b6aaa109b6a898b18f"},
-    {file = "perceval-1.0.4.tar.gz", hash = "sha256:c30be7fb136a8b6fa1a15adf61e382796c92f846b8689a206d330b3060944750"},
+    {file = "perceval-1.0.5-py3-none-any.whl", hash = "sha256:410f136b7821fa0359ea5f9f57775a03d925550d092591578d382d0996a85ef5"},
+    {file = "perceval-1.0.5.tar.gz", hash = "sha256:7180f739ed1d88bbade6b73313184194cbaf60cb79a068f8a1890911fbf13abd"},
 ]
 
 [package.dependencies]
@@ -618,13 +618,13 @@ files = [
 
 [[package]]
 name = "soupsieve"
-version = "2.5"
+version = "2.6"
 description = "A modern CSS selector implementation for Beautiful Soup."
 optional = false
 python-versions = ">=3.8"
 files = [
-    {file = "soupsieve-2.5-py3-none-any.whl", hash = "sha256:eaa337ff55a1579b6549dc679565eac1e3d000563bcb1c8ab0d0fefbc0c2cdc7"},
-    {file = "soupsieve-2.5.tar.gz", hash = "sha256:5663d5a7b3bfaeee0bc4372e7fc48f9cff4940b3eec54a6451cc5299f1097690"},
+    {file = "soupsieve-2.6-py3-none-any.whl", hash = "sha256:e72c4ff06e4fb6e4b5a9f0f55fe6e81514581fca1515028625d0f299c602ccc9"},
+    {file = "soupsieve-2.6.tar.gz", hash = "sha256:e2e68417777af359ec65daac1057404a3c8a5455bb8abc36f1a9866ab1a51abb"},
 ]
 
 [[package]]
