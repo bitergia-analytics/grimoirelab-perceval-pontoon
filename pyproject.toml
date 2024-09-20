@@ -42,7 +42,7 @@ classifiers = [
 
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 
 grimoirelab-toolkit = { version = ">=0.3", allow-prereleases = true}
 perceval = { version = ">=0.19", allow-prereleases = true }
@@ -50,8 +50,8 @@ perceval = { version = ">=0.19", allow-prereleases = true }
 
 [tool.poetry.group.dev.dependencies]
 httpretty = "^1.1.4"
-flake8 = "^4.0.1"
-coverage = "^5.5"
+flake8 = "^7.1.1"
+coverage = "^7.2.3"
 
 
 [build-system]
