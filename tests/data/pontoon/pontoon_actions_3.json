@@ -1,0 +1,108 @@
+{
+  "actions":[
+    {
+      "date":"2024-12-04T12:20:52.237Z",
+      "entity":{
+        "key":"Something went wrong, please contact developer support.",
+        "pk":311213
+      },
+      "locale":{
+        "code":"fr",
+        "name":"French",
+        "pk":74
+      },
+      "resource":{
+        "format":"po",
+        "path":"LC_MESSAGES/django.po",
+        "pk":578
+      },
+      "translation":{
+        "approved":false,
+        "errors":[ ],
+        "fuzzy":false,
+        "pk":10758265,
+        "pretranslated":false,
+        "rejected":true,
+        "string":"Un problème est survenu, veuillez contacter le support développeur.",
+        "warnings":[ ]
+      },
+      "type":"translation:rejected",
+      "user":{
+        "name":"User 3",
+        "pk":107,
+        "system_user":false
+      }
+    },
+    {
+      "date":"2024-12-04T12:20:52.349Z",
+      "entity":{
+        "key":"Something went wrong, please contact developer support.",
+        "pk":311213
+      },
+      "locale":{
+        "code":"fr",
+        "name":"French",
+        "pk":74
+      },
+      "resource":{
+        "format":"po",
+        "path":"LC_MESSAGES/django.po",
+        "pk":578
+      },
+      "translation":{
+        "approved":true,
+        "errors":[ ],
+        "fuzzy":false,
+        "pk":10775382,
+        "pretranslated":false,
+        "rejected":false,
+        "string":"Une erreur s’est produite, veuillez contacter l’assistance aux développeurs.",
+        "warnings":[ ]
+      },
+      "type":"translation:created",
+      "user":{
+        "name":"User 3",
+        "pk":107,
+        "system_user":false
+      }
+    },
+    {
+      "date":"2024-12-04T12:22:44.333Z",
+      "entity":{
+        "key":"Restricted",
+        "pk":311491
+      },
+      "locale":{
+        "code":"fr",
+        "name":"French",
+        "pk":74
+      },
+      "resource":{
+        "format":"po",
+        "path":"LC_MESSAGES/django.po",
+        "pk":578
+      },
+      "translation":{
+        "approved":true,
+        "errors":[ ],
+        "fuzzy":false,
+        "pk":10758253,
+        "pretranslated":false,
+        "rejected":false,
+        "string":"Restreint",
+        "warnings":[ ]
+      },
+      "type":"translation:approved",
+      "user":{
+        "name":"User 3",
+        "pk":107,
+        "system_user":false
+      }
+    }
+  ],
+  "project":{
+    "name":"Project 1",
+    "pk":1,
+    "slug":"p1"
+  }
+}
