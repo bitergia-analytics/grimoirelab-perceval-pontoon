@@ -88,6 +88,22 @@ To obtain the list of locales available in a server, run Perceval in the followi
 $ perceval pontoon "https://pontoon.example.com" --category locale
 ```
 
+#### Users actions
+
+To obtain the actions performed by users on a Pontoon server, you need
+the server's URL, a project and the `sessionid` cookie. To get the `sessionid`
+cookie, log in to the Pontoon server. Then, open the browser's developer tools
+and copy the `sessionid` cookie from the cookies store or the network requests.
+
+Run perceval with the Pontoon URL, a project and the `sessionid` cookie to fetch
+the actions performed by users. It is also recommended to include a from_date
+parameter. For example:
+
+```
+$ perceval pontoon "https://pontoon.example.com" --category action \
+  --project amo --session-id <session_id> --from-date 2022-01-01
+```
+
 ## License
 
 Licensed under GNU General Public License (GPL), version 3 or later.
