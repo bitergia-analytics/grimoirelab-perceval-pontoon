@@ -1,0 +1,207 @@
+{
+  "actions":[
+    {
+      "date":"2024-12-02T10:06:36.384Z",
+      "entity":{
+        "key":"{0} Daily Users",
+        "pk":154492
+      },
+      "locale":{
+        "code":"el",
+        "name":"Greek",
+        "pk":88
+      },
+      "resource":{
+        "format":"po",
+        "path":"LC_MESSAGES/django.po",
+        "pk":578
+      },
+      "translation":{
+        "approved":true,
+        "errors":[ ],
+        "fuzzy":false,
+        "pk":10768514,
+        "pretranslated":false,
+        "rejected":false,
+        "string":"{0} ημερήσιοι χρήστες",
+        "warnings":[ ]
+      },
+      "type":"translation:created",
+      "user":{
+        "name":"User 1",
+        "pk":976,
+        "system_user":false
+      }
+    },
+    {
+      "date":"2024-12-02T14:05:44.389Z",
+      "entity":{
+        "key":"Version History with Changelogs",
+        "pk":66546
+      },
+      "locale":{
+        "code":"vi",
+        "name":"Vietnamese",
+        "pk":262
+      },
+      "resource":{
+        "format":"po",
+        "path":"LC_MESSAGES/django.po",
+        "pk":578
+      },
+      "translation":{
+        "approved":true,
+        "errors":[ ],
+        "fuzzy":false,
+        "pk":10768702,
+        "pretranslated":false,
+        "rejected":false,
+        "string":"Lịch sử phiên bản với nhật ký thay đổi",
+        "warnings":[ ]
+      },
+      "type":"translation:created",
+      "user":{
+        "name":"User 2",
+        "pk":2712,
+        "system_user":false
+      }
+    },
+    {
+      "date":"2024-12-02T14:05:46.066Z",
+      "entity":{
+        "key":"Version History with Changelogs",
+        "pk":66546
+      },
+      "locale":{
+        "code":"vi",
+        "name":"Vietnamese",
+        "pk":262
+      },
+      "resource":{
+        "format":"po",
+        "path":"LC_MESSAGES/django.po",
+        "pk":578
+      },
+      "translation":{
+        "approved":true,
+        "errors":[ ],
+        "fuzzy":false,
+        "pk":10768702,
+        "pretranslated":false,
+        "rejected":false,
+        "string":"Lịch sử phiên bản với nhật ký thay đổi",
+        "warnings":[ ]
+      },
+      "type":"translation:approved",
+      "user":{
+        "name":"User 2",
+        "pk":2712,
+        "system_user":false
+      }
+    },
+    {
+      "date":"2024-12-02T14:05:45.996Z",
+      "entity":{
+        "key":"Version History with Changelogs",
+        "pk":66546
+      },
+      "locale":{
+        "code":"vi",
+        "name":"Vietnamese",
+        "pk":262
+      },
+      "resource":{
+        "format":"po",
+        "path":"LC_MESSAGES/django.po",
+        "pk":578
+      },
+      "translation":{
+        "approved":false,
+        "errors":[ ],
+        "fuzzy":false,
+        "pk":1260794,
+        "pretranslated":false,
+        "rejected":true,
+        "string":"Lược sử Phiên bản cùng với Lưu kí Thay đổi",
+        "warnings":[ ]
+      },
+      "type":"translation:rejected",
+      "user":{
+        "name":"User 2",
+        "pk":2712,
+        "system_user":false
+      }
+    },
+    {
+      "date":"2024-12-02T14:06:08.445Z",
+      "entity":{
+        "key":"Version History",
+        "pk":66561
+      },
+      "locale":{
+        "code":"vi",
+        "name":"Vietnamese",
+        "pk":262
+      },
+      "resource":{
+        "format":"po",
+        "path":"LC_MESSAGES/django.po",
+        "pk":578
+      },
+      "translation":{
+        "approved":false,
+        "errors":[ ],
+        "fuzzy":false,
+        "pk":1261759,
+        "pretranslated":false,
+        "rejected":true,
+        "string":"Lược sử Phiên bản",
+        "warnings":[ ]
+      },
+      "type":"translation:rejected",
+      "user":{
+        "name":"User 2",
+        "pk":2712,
+        "system_user":false
+      }
+    },
+    {
+      "date":"2024-12-02T14:06:05.945Z",
+      "entity":{
+        "key":"Version History",
+        "pk":66561
+      },
+      "locale":{
+        "code":"vi",
+        "name":"Vietnamese",
+        "pk":262
+      },
+      "resource":{
+        "format":"po",
+        "path":"LC_MESSAGES/django.po",
+        "pk":578
+      },
+      "translation":{
+        "approved":true,
+        "errors":[ ],
+        "fuzzy":false,
+        "pk":10768704,
+        "pretranslated":false,
+        "rejected":false,
+        "string":"Lịch sử phiên bản",
+        "warnings":[ ]
+      },
+      "type":"translation:created",
+      "user":{
+        "name":"User 2",
+        "pk":2712,
+        "system_user":false
+      }
+    }
+  ],
+  "project":{
+    "name":"Project 1",
+    "pk":1,
+    "slug":"p1"
+  }
+}
