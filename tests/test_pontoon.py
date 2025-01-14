@@ -31,17 +31,24 @@ from dateutil.tz import tzutc
 from perceval.backend import BackendCommandArgumentParser
 from perceval.backends.pontoon.pontoon import (Pontoon,
                                                PontoonCommand,
-                                               PontoonClient)
+                                               PontoonClient,
+                                               CATEGORY_USER_ACTIONS,
+                                               CATEGORY_ENTITY,
+                                               CATEGORY_LOCALE)
 
 PONTOON_ENTITIES = 'data/pontoon/pontoon_entities.json'
 PONTOON_PAGE_1 = 'data/pontoon/pontoon_entities_page_1.json'
 PONTOON_PAGE_2 = 'data/pontoon/pontoon_entities_page_2.json'
 PONTOON_HISTORY = 'data/pontoon/pontoon_history.json'
 PONTOON_LOCALES = 'data/pontoon/pontoon_locales.json'
+PONTOON_ACTIONS_1 = 'data/pontoon/pontoon_actions_1.json'
+PONTOON_ACTIONS_2 = 'data/pontoon/pontoon_actions_2.json'
+PONTOON_ACTIONS_3 = 'data/pontoon/pontoon_actions_3.json'
 
 PONTOON_URL = 'https://pontoon.example.com'
 PONTOON_ENTITIES_URL = PONTOON_URL + '/get-entities/'
 PONTOON_HISTORY_URL = PONTOON_URL + '/get-history'
+PONTOON_ACTIONS_URL = PONTOON_URL + '/api/v1/user-actions/{}/project/p1/'
 PONTOON_GRAPHQL_URL = PONTOON_URL + '/graphql'
 
 
@@ -51,7 +58,7 @@ def read_file(filename, mode='r'):
     return content
 
 
-def setup_http_server():
+def setup_entities_http_server():
     entities = read_file(PONTOON_ENTITIES)
     httpretty.register_uri(httpretty.POST,
                            PONTOON_ENTITIES_URL,
@@ -80,6 +87,23 @@ def setup_graphql_server():
                                httpretty.Response(body=request_callback)
                            ])
     return http_requests
+
+
+def setup_actions_http_server():
+    actions_body_1 = read_file(PONTOON_ACTIONS_1)
+    httpretty.register_uri(httpretty.GET,
+                           PONTOON_ACTIONS_URL.format('2024-12-02'),
+                           body=actions_body_1)
+
+    actions_body_2 = read_file(PONTOON_ACTIONS_2)
+    httpretty.register_uri(httpretty.GET,
+                           PONTOON_ACTIONS_URL.format('2024-12-03'),
+                           body=actions_body_2)
+
+    actions_body_3 = read_file(PONTOON_ACTIONS_3)
+    httpretty.register_uri(httpretty.GET,
+                           PONTOON_ACTIONS_URL.format('2024-12-04'),
+                           body=actions_body_3)
 
 
 class TestPontoonBackend(unittest.TestCase):
@@ -119,10 +143,10 @@ class TestPontoonBackend(unittest.TestCase):
         self.assertEqual(Pontoon.has_resuming(), True)
 
     @httpretty.activate
-    def test_fetch(self):
+    def test_fetch_entities(self):
         """Test whether it fetches a set of entities"""
 
-        setup_http_server()
+        setup_entities_http_server()
 
         expected = [
             [280952, "9dc5c9c9cb1319c7cd397f12570632f7a152af5a", "amo"],
@@ -133,7 +157,7 @@ class TestPontoonBackend(unittest.TestCase):
         ]
 
         backend = Pontoon(PONTOON_URL, 'es')
-        entities = [e for e in backend.fetch()]
+        entities = [e for e in backend.fetch(category=CATEGORY_ENTITY)]
 
         self.assertEqual(len(entities), len(expected))
 
@@ -148,6 +172,45 @@ class TestPontoonBackend(unittest.TestCase):
             self.assertEqual(len(entity['data']['history_data']), 4)
 
     @httpretty.activate
+    def test_fetch_user_actions(self):
+        """Test whether it fetches a set of user actions"""
+
+        setup_actions_http_server()
+
+        expected = [
+            ['1afc49c069f7f10563cebc72fcce1598c92d440b', 154492, 'el', 'translation:created', 'User 1'],
+            ['0d8d8043d691cf61aed23c17b60a19c4f63a55dc', 66546, 'vi', 'translation:created', 'User 2'],
+            ['baa8d74cbcc5270eae9756f955a4540c047a2d2e', 66546, 'vi', 'translation:approved', 'User 2'],
+            ['149a49ea99f31eb8e3ad35f55c159f7b50b26ac4', 66546, 'vi', 'translation:rejected', 'User 2'],
+            ['24f301a3e33194c1dceeaf196b96b5bb5233fef3', 66561, 'vi', 'translation:rejected', 'User 2'],
+            ['b3228750d16fc596e75ea66d0393fa1021b96bb1', 66561, 'vi', 'translation:created', 'User 2'],
+            ['00f1b18475c552fe8fbdbdeff328ea6fb280f125', 311213, 'fr', 'translation:rejected', 'User 3'],
+            ['c531ccfc3408fa11beef9d5cc0b4c4a03c18f124', 311213, 'fr', 'translation:created', 'User 3'],
+            ['96cbcf2a4de5e7bcc2ff53c87230b47141f0426e', 311491, 'fr', 'translation:approved', 'User 3'],
+        ]
+
+        from_date = datetime.datetime(2024, 12, 2)
+        to_date = datetime.datetime(2024, 12, 4)
+        backend = Pontoon(PONTOON_URL, project='p1', session_id='foobar')
+        actions = [a for a in backend.fetch(category=CATEGORY_USER_ACTIONS,
+                                            from_date=from_date,
+                                            to_date=to_date)]
+
+        self.assertEqual(len(actions), len(expected))
+        for i, action in enumerate(actions):
+            self.assertEqual(action['backend_name'], 'Pontoon')
+            self.assertEqual(action['origin'], 'https://pontoon.example.com/p1')
+            self.assertEqual(action['tag'], 'https://pontoon.example.com/p1')
+            self.assertEqual(action['category'], 'action')
+            self.assertEqual(action['data']['project']['slug'], 'p1')
+            self.assertEqual(action['data']['project']['name'], 'Project 1')
+            self.assertEqual(action['uuid'], expected[i][0])
+            self.assertEqual(action['data']['entity']['pk'], expected[i][1])
+            self.assertEqual(action['data']['locale']['code'], expected[i][2])
+            self.assertEqual(action['data']['type'], expected[i][3])
+            self.assertEqual(action['data']['user']['name'], expected[i][4])
+
+    @httpretty.activate
     def test_fetch_locale(self):
         """Test whether it fetches the available locales"""
 
@@ -160,7 +223,7 @@ class TestPontoonBackend(unittest.TestCase):
         ]
 
         backend = Pontoon(PONTOON_URL)
-        locales = [loc for loc in backend.fetch(category='locale')]
+        locales = [loc for loc in backend.fetch(category=CATEGORY_LOCALE)]
 
         self.assertEqual(len(locales), len(expected))
         for i, locale in enumerate(locales):
@@ -172,16 +235,32 @@ class TestPontoonBackend(unittest.TestCase):
             self.assertEqual(locale['uuid'], expected[i][1])
 
     @httpretty.activate
-    def test_search_fields(self):
+    def test_entities_search_fields(self):
         """Test whether the search_fields is properly set"""
 
-        setup_http_server()
+        setup_entities_http_server()
 
         backend = Pontoon(PONTOON_URL, 'es')
-        entities = [e for e in backend.fetch()]
+        entities = [e for e in backend.fetch(category=CATEGORY_ENTITY)]
 
         for entity in entities:
             self.assertEqual(backend.metadata_id(entity['data']), entity['search_fields']['item_id'])
+
+    @httpretty.activate
+    def test_user_actions_search_fields(self):
+        """Test whether the search_fields is properly set"""
+
+        setup_actions_http_server()
+
+        from_date = datetime.datetime(2024, 12, 2)
+        to_date = datetime.datetime(2024, 12, 4)
+        backend = Pontoon(PONTOON_URL, project='p1', session_id='foobar')
+        actions = [a for a in backend.fetch(category=CATEGORY_USER_ACTIONS,
+                                            from_date=from_date,
+                                            to_date=to_date)]
+
+        for action in actions:
+            self.assertEqual(backend.metadata_id(action['data']), action['search_fields']['item_id'])
 
 
 class TestPontoonCommand(unittest.TestCase):
@@ -289,7 +368,7 @@ class TestPontoonClient(unittest.TestCase):
     def test_history(self):
         """Test History for an entity request"""
 
-        setup_http_server()
+        setup_entities_http_server()
 
         history_data = json.loads(read_file(PONTOON_HISTORY))
 
@@ -400,6 +479,67 @@ class TestPontoonClient(unittest.TestCase):
 
         self.assertEqual(len(http_requests), 1)
         self.assertEqual(http_requests[0].method, 'GET')
+
+    @httpretty.activate
+    def test_actions(self):
+        """Test fetch actions using the client"""
+
+        def generate_id(item):
+            return f"action:{item['project']['slug']}:" \
+                   f"{item['locale']['code']}:" \
+                   f"{item['entity']['pk']}:" \
+                   f"{item['translation']['pk']}:" \
+                   f"{item['type']}"
+
+        # Mock HTTP server
+        setup_actions_http_server()
+
+        # Expected results
+        actions_data_1 = json.loads(read_file(PONTOON_ACTIONS_1))
+        actions_data_2 = json.loads(read_file(PONTOON_ACTIONS_2))
+        actions_data_3 = json.loads(read_file(PONTOON_ACTIONS_3))
+
+        expected = []
+        for action in actions_data_1['actions']:
+            action['project'] = actions_data_1['project']
+            action['id'] = generate_id(action)
+            expected.append(action)
+
+        for action in actions_data_2['actions']:
+            action['project'] = actions_data_2['project']
+            action['id'] = generate_id(action)
+            expected.append(action)
+
+        for action in actions_data_3['actions']:
+            action['project'] = actions_data_3['project']
+            action['id'] = generate_id(action)
+            expected.append(action)
+
+        # Call API
+        client = PontoonClient(base_uri=PONTOON_URL,
+                               session_id='foobar',
+                               max_items=5)
+
+        from_date = datetime.datetime(2024, 12, 2)
+        to_date = datetime.datetime(2024, 12, 4)
+        entities = [e for e in client.user_actions(project='p1', from_date=from_date, to_date=to_date)]
+
+        self.assertEqual(len(entities), len(expected))
+
+        for i, entity in enumerate(entities):
+            self.assertDictEqual(entity, expected[i])
+
+        http_requests = httpretty.latest_requests()
+        self.assertEqual(len(http_requests), 3)
+        self.assertEqual(http_requests[0].method, 'GET')
+        self.assertEqual(http_requests[0].path, '/api/v1/user-actions/2024-12-02/project/p1/')
+        self.assertEqual(http_requests[0].headers['Cookie'], 'sessionid=foobar')
+        self.assertEqual(http_requests[1].method, 'GET')
+        self.assertEqual(http_requests[1].path, '/api/v1/user-actions/2024-12-03/project/p1/')
+        self.assertEqual(http_requests[1].headers['Cookie'], 'sessionid=foobar')
+        self.assertEqual(http_requests[2].method, 'GET')
+        self.assertEqual(http_requests[2].path, '/api/v1/user-actions/2024-12-04/project/p1/')
+        self.assertEqual(http_requests[2].headers['Cookie'], 'sessionid=foobar')
 
 
 if __name__ == "__main__":
