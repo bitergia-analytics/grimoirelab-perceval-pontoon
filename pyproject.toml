@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "perceval-pontoon"
-version = "0.1.14"
+version = "0.2.0-rc.1"
 description = "Perceval backend for Pontoon"
 authors = [
     "Bitergia Developers"
