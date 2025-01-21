@@ -1,5 +1,16 @@
 # Releases
 
+## perceval-pontoon 0.2.0 - (2025-01-21)
+
+**New features:**
+
+ * User actions support for Pontoon API\
+   A new category has been added to the Pontoon backend, allowing the
+   collection of user actions via the Pontoon API. To use this feature,
+   specify the target project and provide a valid session ID as
+   parameters.
+
+
   ## perceval-pontoon 0.1.14 - (2024-12-11)
   
   * Update Poetry's package dependencies
