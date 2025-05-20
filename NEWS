@@ -1,5 +1,9 @@
 # Releases
 
+  ## perceval-pontoon 0.2.3 - (2025-05-20)
+  
+  * Update Poetry's package dependencies
+
   ## perceval-pontoon 0.2.2 - (2025-05-09)
   
   * Update Poetry's package dependencies
