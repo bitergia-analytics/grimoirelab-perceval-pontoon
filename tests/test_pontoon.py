@@ -48,7 +48,7 @@ PONTOON_ACTIONS_3 = 'data/pontoon/pontoon_actions_3.json'
 PONTOON_URL = 'https://pontoon.example.com'
 PONTOON_ENTITIES_URL = PONTOON_URL + '/get-entities/'
 PONTOON_HISTORY_URL = PONTOON_URL + '/get-history'
-PONTOON_ACTIONS_URL = PONTOON_URL + '/api/v1/user-actions/{}/project/p1/'
+PONTOON_ACTIONS_URL = PONTOON_URL + '/api/v2/user-actions/{}/project/p1/'
 PONTOON_GRAPHQL_URL = PONTOON_URL + '/graphql'
 
 
@@ -532,13 +532,13 @@ class TestPontoonClient(unittest.TestCase):
         http_requests = httpretty.latest_requests()
         self.assertEqual(len(http_requests), 3)
         self.assertEqual(http_requests[0].method, 'GET')
-        self.assertEqual(http_requests[0].path, '/api/v1/user-actions/2024-12-02/project/p1/')
+        self.assertEqual(http_requests[0].path, '/api/v2/user-actions/2024-12-02/project/p1/')
         self.assertEqual(http_requests[0].headers['Cookie'], 'sessionid=foobar')
         self.assertEqual(http_requests[1].method, 'GET')
-        self.assertEqual(http_requests[1].path, '/api/v1/user-actions/2024-12-03/project/p1/')
+        self.assertEqual(http_requests[1].path, '/api/v2/user-actions/2024-12-03/project/p1/')
         self.assertEqual(http_requests[1].headers['Cookie'], 'sessionid=foobar')
         self.assertEqual(http_requests[2].method, 'GET')
-        self.assertEqual(http_requests[2].path, '/api/v1/user-actions/2024-12-04/project/p1/')
+        self.assertEqual(http_requests[2].path, '/api/v2/user-actions/2024-12-04/project/p1/')
         self.assertEqual(http_requests[2].headers['Cookie'], 'sessionid=foobar')
 
 
