@@ -328,7 +328,7 @@ class PontoonClient(HttpClient):
         while date <= to_date:
             date_str = date.strftime("%Y-%m-%d")
 
-            path = urijoin(self.base_url, 'api', 'v1', self.RUSER_ACTIONS, date_str, 'project', project, '')
+            path = urijoin(self.base_url, 'api', 'v2', self.RUSER_ACTIONS, date_str, 'project', project, '')
             r = self.fetch(path)
 
             data = r.json()
