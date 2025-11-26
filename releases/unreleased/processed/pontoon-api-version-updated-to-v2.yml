@@ -1,7 +1,0 @@
----
-title: '[pontoon] API version updated to v2'
-category: dependency
-author: Jose Javier Merchante <jjmerchante@bitergia.com>
-issue: null
-notes: >
-  Change the API version from v1 to v2 in the PontoonClient.
