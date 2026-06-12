@@ -67,8 +67,8 @@ class Pontoon(Backend):
     DATE_FIELD = 'date_created'
     ENTITY_ID_FIELD = 'pk'
 
-    def __init__(self, uri, locale=None, project=None, session_id=None, tag=None, archive=None,
-                 max_items=MAX_ITEMS_PER_PAGE, ssl_verify=True):
+    def __init__(self, uri, locale=None, project=None, session_id=None, api_token=None,
+                 tag=None, archive=None, max_items=MAX_ITEMS_PER_PAGE, ssl_verify=True):
         if locale:
             origin = urijoin(uri, locale)
         elif project:
@@ -82,6 +82,7 @@ class Pontoon(Backend):
         self.locale = locale
         self.project = project
         self.session_id = session_id
+        self.api_token = api_token
         self.max_items = max_items
 
         self.client = None
@@ -214,7 +215,8 @@ class Pontoon(Backend):
     def _init_client(self, from_archive=False):
         """Init client"""
 
-        return PontoonClient(base_uri=self.uri, session_id=self.session_id, max_items=self.max_items)
+        return PontoonClient(base_uri=self.uri, session_id=self.session_id,
+                             api_token=self.api_token, max_items=self.max_items)
 
 
 class PontoonClient(HttpClient):
@@ -238,12 +240,17 @@ class PontoonClient(HttpClient):
     }
     """
 
-    def __init__(self, base_uri, session_id=None, max_items=MAX_ITEMS_PER_PAGE):
+    def __init__(self, base_uri, session_id=None, api_token=None, max_items=MAX_ITEMS_PER_PAGE):
         self.max_items = max_items
         self.session_id = session_id
+        self.api_token = api_token
 
         headers = {'x-requested-with': 'XMLHttpRequest'}
-        if session_id:
+        # A Pontoon Personal Access Token (Authorization: Bearer) supersedes the
+        # session cookie and avoids its ~14-day expiry (see mozilla/pontoon#4081).
+        if api_token:
+            headers['Authorization'] = f"Bearer {api_token}"
+        elif session_id:
             headers['Cookie'] = f"sessionid={session_id}"
         super().__init__(base_url=base_uri, extra_headers=headers)
 
@@ -371,5 +378,8 @@ class PontoonCommand(BackendCommand):
                            help="Project to fetch.")
         group.add_argument('--session-id', dest='session_id', type=str,
                            help="Django session ID to use for user-actions requests.")
+        group.add_argument('--api-token', dest='api_token', type=str,
+                           help="Pontoon Personal Access Token (Bearer) for API requests; "
+                                "preferred over --session-id (no ~14-day expiry).")
 
         return parser
