@@ -1,0 +1,10 @@
+title: Support Pontoon Personal Access Token (Bearer) authentication
+category: added
+author: Arron Atchison <aatchison@thunderbird.net>
+notes: >
+    The Pontoon backend can now authenticate to the API with a Personal
+    Access Token via the Authorization: Bearer header (new --api-token /
+    api_token option), in addition to the Django session cookie. Pontoon
+    PATs do not suffer the session cookie's ~14-day expiry (they last 365
+    days), so token auth is preferred for unattended collection. When set,
+    the token supersedes the session id.

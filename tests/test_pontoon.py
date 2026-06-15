@@ -541,6 +541,27 @@ class TestPontoonClient(unittest.TestCase):
         self.assertEqual(http_requests[2].path, '/api/v2/user-actions/2024-12-04/project/p1/')
         self.assertEqual(http_requests[2].headers['Cookie'], 'sessionid=foobar')
 
+    @httpretty.activate
+    def test_actions_with_api_token(self):
+        """Test that api_token sends a Bearer Authorization header (not a cookie)"""
+
+        # Mock HTTP server
+        setup_actions_http_server()
+
+        client = PontoonClient(base_uri=PONTOON_URL,
+                               api_token='tok123',
+                               max_items=5)
+
+        from_date = datetime.datetime(2024, 12, 2)
+        to_date = datetime.datetime(2024, 12, 4)
+        _ = [e for e in client.user_actions(project='p1', from_date=from_date, to_date=to_date)]
+
+        http_requests = httpretty.latest_requests()
+        self.assertGreater(len(http_requests), 0)
+        # Authenticates with a Pontoon PAT via the Authorization header, not a session cookie
+        self.assertEqual(http_requests[0].headers['Authorization'], 'Bearer tok123')
+        self.assertNotIn('Cookie', http_requests[0].headers)
+
 
 if __name__ == "__main__":
     unittest.main(warnings='ignore')
